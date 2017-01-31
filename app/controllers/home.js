@@ -15,14 +15,15 @@ inputElement.addEventListener("change", handleFiles, false);
       .then(function(snapshot) {
         console.log('Uploaded a blob or file!');
       });
-  }
 
-   storageRef.child('Old Fashioned Tree.jpg').getDownloadURL()
+   storageRef.child(fileList[0].name).getDownloadURL()
     .then(function(url) {
       var img = document.getElementById('myImg');
       img.src = url;
     }).catch(function(error) {
     // Handle any errors
   });
+
+  }
 
 })
